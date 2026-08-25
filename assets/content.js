@@ -28,7 +28,7 @@ const SITE = {
     /* The button at the top right of every page. It opens the contact page */
     navCta: "Contact",
     /* The thin line just above the footer */
-    strapline: "Operations. Automation. Growth."
+    strapline: "Operations. Automation. Scale."
   },
 
   /* The links along the top. The Contact button is separate, see brand.navCta */
