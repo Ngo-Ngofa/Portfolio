@@ -110,7 +110,7 @@ const SITE = {
 
        You can also paste a Google Form embed address here instead, and that
        form gets shown in the page rather than this one. See DEPLOY.md.        */
-    form: "ngongofa@gmail.com",
+    form: "ad961f46642453439cecbcd9c583d0f0",
 
     /* The subject line of the emails you receive */
     emailSubject: "New enquiry from the CSC site",
