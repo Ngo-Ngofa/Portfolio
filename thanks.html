@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thank you | CSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<script src="assets/content.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* If the assets folder did not upload, say so instead of showing a blank page. */
+(function(){
+  var missing = [];
+  if (typeof SITE === "undefined") missing.push("assets/content.js");
+  if (typeof renderThanks !== "function") missing.push("assets/site.js");
+  if (missing.length){
+    document.body.innerHTML =
+      '<div style="font:16px/1.6 system-ui,sans-serif;color:#0B1D3A;max-width:620px;' +
+      'margin:80px auto;padding:0 24px">' +
+      '<h1 style="font-size:26px;margin:0 0 14px">The page could not load its files</h1>' +
+      '<p>The browser could not find: <b>' + missing.join("</b>, <b>") + '</b></p>' +
+      '<p>This nearly always means the <b>assets</b> folder is missing from the ' +
+      'repository, or everything was uploaded inside another folder by mistake. ' +
+      'In the repository, <b>index.html</b> and the <b>assets</b> folder must both sit ' +
+      'at the very top level, side by side.</p></div>';
+    return;
+  }
+  renderThanks();
+})();
+</script>
+</body>
+</html>
