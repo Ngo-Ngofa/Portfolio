@@ -1,0 +1,4 @@
+# Keep the site out of search results while it is being shared privately.
+# Delete this file when you want it to be findable.
+User-agent: *
+Disallow: /
