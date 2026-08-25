@@ -230,7 +230,7 @@ const SITE = {
       id: "shipping-logistics",
       name: "Shipping & Logistics",
       cardLine: "Simplify shipping operations and bring orders, carriers and fulfilment into one view.",
-      launch: "https://ngo-ngofa.github.io/shipping-analyzer-tool/demo.html",
+      launch: "https://ngo-ngofa.github.io/Shipping-Analyser/demo.html",
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
 
