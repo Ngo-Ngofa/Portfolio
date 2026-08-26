@@ -28,7 +28,7 @@ const SITE = {
     /* The button at the top right of every page. It opens the contact page */
     navCta: "Contact",
     /* The thin line just above the footer */
-    strapline: "Operations. Automation. Scale."
+    strapline: "Transformation. Automation. Scale."
   },
 
   /* The links along the top. The Contact button is separate, see brand.navCta */
@@ -45,17 +45,17 @@ const SITE = {
   heroBackground: "navy",
 
   hero: {
-    heading: "Turning complexity",
-    headingAccent: "into clarity.",
-    body: "Practical tools and solutions that bring together messy processes, fragmented data and disconnected systems, giving teams the visibility they need to make better decisions.",
+    heading: "Making space",
+    headingAccent: "for scale.",
+    body: "Connecting systems and fragmented data, giving teams the visibility they need to act fast and make better decisions.",
     cta: "Explore the apps"
   },
 
   intro: {
-    heading: "Better information. Better decisions.",
+    heading: "Understand the problem. Build the solution.",
     body: [
-      "Businesses rarely lack information. The challenge is getting the right information together, understanding what it means and making it useful.",
-      "CSC builds practical solutions that connect data, simplify processes and automate the work that gets in the way, from operational dashboards and forecasting tools to customer intelligence and bespoke applications."
+      "Businesses lose time when data is spread across systems or lacks visibility, when processes rely on manual work or existing systems are not quite up to scratch.",
+      "We identify the gaps and build the solutions to connect the data and streamline processes, freeing up time for the work that matters."
     ]
   },
 
@@ -142,7 +142,7 @@ const SITE = {
     {
       id: "customer-insights",
       name: "Customer Insights",
-      cardLine: "Turn customer feedback and service data into clear, actionable insights.",
+      cardLine: "Turning scattered customer data into valuable insights",
       launch: "https://ngo-ngofa.github.io/Customer-Insights/",
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
@@ -187,7 +187,7 @@ const SITE = {
     {
       id: "forecasting-purchasing",
       name: "Forecasting & Purchasing",
-      cardLine: "Make better purchasing decisions using demand, inventory and supplier data.",
+      cardLine: "A clearer view of inventory, purchasing and spend.",
       launch: "https://ngo-ngofa.github.io/Purchasing-App/",
       launchLabel: "Launch prototype",
       image: "assets/img/forecasting-purchasing.png",
@@ -229,7 +229,7 @@ const SITE = {
     {
       id: "shipping-logistics",
       name: "Shipping & Logistics",
-      cardLine: "Simplify shipping operations and bring orders, carriers and fulfilment into one view.",
+      cardLine: "Understanding the full costs of shipping.",
       launch: "https://ngo-ngofa.github.io/Shipping-Analyser/demo.html",
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
