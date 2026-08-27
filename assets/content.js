@@ -52,7 +52,7 @@ const SITE = {
   },
 
   intro: {
-    heading: "Understands the problem. Builds the solution.",
+    heading: "Building solutions for business challenges.",
     body: [
       "Businesses lose time when data is spread across systems or lacks visibility for teams, when processes rely on manual work or existing systems are not quite up to scratch.",
       "We identify the gaps and build the solutions to connect the data and streamline processes, freeing up time for the work that matters."
