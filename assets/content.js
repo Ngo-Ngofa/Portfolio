@@ -47,7 +47,7 @@ const SITE = {
   hero: {
     heading: "Making space",
     headingAccent: "for scale.",
-    body: "Connecting systems and fragmented data, giving teams the visibility they need to act fast and make informed decisions.",
+    body: "Building systems from fragmented data, giving teams the visibility they need to act fast and make informed decisions.",
     cta: "Explore the apps"
   },
 
