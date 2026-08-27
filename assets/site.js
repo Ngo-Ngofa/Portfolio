@@ -13,6 +13,12 @@ function colsHTML(arr){
   return `<div class="cols${list.length < 2 ? " one" : ""}">` +
     list.map(t => `<p class="lede">${esc(t)}</p>`).join("") + `</div>`;
 }
+/* the small label above a section. Uses the eyebrow field in content.js when
+   there is one, otherwise falls back to the wording built from brand.mark */
+function eyebrowHTML(block, fallback){
+  const text = (block && block.eyebrow) || fallback;
+  return text ? `<div class="eyebrow">${esc(text)}</div>` : "";
+}
 
 /* ------------------------------------------------------------- contact */
 /* contact.form in content.js decides what the contact page shows:
@@ -214,7 +220,7 @@ function renderHome(style, bg){
 
   <section class="sec navy">
     <div class="w">
-      <div class="eyebrow">What ${esc(SITE.brand.mark)} does</div>
+      ${eyebrowHTML(SITE.intro, "What " + SITE.brand.mark + " does")}
       <div class="split">
         <h2>${esc(SITE.intro.heading)}</h2>
         ${colsHTML(SITE.intro.body)}
@@ -227,7 +233,7 @@ function renderHome(style, bg){
 
   ${SITE.howItWorks ? `<section class="sec light" id="how">
     <div class="w">
-      <div class="eyebrow">How it works</div>
+      ${eyebrowHTML(SITE.howItWorks, "How it works")}
       <div class="split">
         <h2>${esc(SITE.howItWorks.heading)}</h2>
         ${colsHTML(SITE.howItWorks.body)}
@@ -241,7 +247,7 @@ function renderHome(style, bg){
 
   <section class="sec" id="about">
     <div class="w">
-      <div class="eyebrow">About ${esc(SITE.brand.mark)}</div>
+      ${eyebrowHTML(SITE.about, "About " + SITE.brand.mark)}
       <div class="split">
         <h2>${esc(SITE.about.heading)}</h2>
         ${colsHTML(SITE.about.body)}
