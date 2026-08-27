@@ -318,8 +318,14 @@ footer a:hover{color:#fff}
 .results{background:var(--navy);color:#fff}
 .results .w{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 @media(max-width:760px){.results .w{grid-template-columns:1fr}}
-.results div{padding:34px 30px 34px 0;border-right:1px solid rgba(187,218,248,.18)}
-.results div:last-child{border-right:0}
+.results div{padding:34px 34px;border-right:1px solid rgba(187,218,248,.18)}
+.results div:first-child{padding-left:0}
+.results div:last-child{border-right:0;padding-right:0}
+@media(max-width:760px){
+  .results div{padding:28px 0;border-right:0;
+    border-bottom:1px solid rgba(187,218,248,.18)}
+  .results div:last-child{border-bottom:0}
+}
 .results b{display:block;font-family:var(--disp);font-size:34px;font-weight:600;
   letter-spacing:-.03em;color:#fff;line-height:1.05}
 .results span{font-size:14.5px;color:rgba(187,218,248,.85);margin-top:10px;display:block;
