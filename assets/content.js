@@ -229,7 +229,7 @@ const SITE = {
     {
       id: "shipping-logistics",
       name: "Shipping & Logistics",
-      cardLine: "Understanding the full costs of shipping.",
+      cardLine: "Understanding the full and true costs of shipping.",
       launch: "https://ngo-ngofa.github.io/Shipping-Analyser/demo.html",
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
