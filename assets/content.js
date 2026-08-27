@@ -84,7 +84,7 @@ const SITE = {
   },*/
 
   about: {
-    heading: "Practical technology, grounded in how businesses actually work.",
+    heading: "Practical tools, grounded in how businesses actually work.",
     body: [
       "CSC combines operational expertise with hands-on technical capability to build tools that solve real business problems.",
       "The focus is on making complex information easier to understand, reducing unnecessary manual work and creating systems that people can actually use.",
