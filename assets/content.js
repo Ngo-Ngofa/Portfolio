@@ -52,6 +52,7 @@ const SITE = {
   },
 
   intro: {
+    eyebrow: "What CSC does",
     heading: "Building solutions for business challenges.",
     body: [
       "Businesses lose time when data is spread across systems or lacks visibility for teams, when processes rely on manual work or existing systems are not quite up to scratch.",
@@ -71,6 +72,7 @@ const SITE = {
   appsHeading: "Apps",
 
   /* howItWorks: {
+    eyebrow: "How it works",
     heading: "Find the problem. Build the solution.",
     body: [
       "Whether the challenge is fragmented data, a manual process, poor visibility or a gap in existing software, the solution is built around what the business actually needs."
@@ -84,6 +86,7 @@ const SITE = {
   },*/
 
   about: {
+    eyebrow: "About CSC",
     heading: "Practical tools, grounded in how businesses actually work.",
     body: [
       "CSC combines operational expertise with hands-on technical capability to build tools that solve real business problems.",
