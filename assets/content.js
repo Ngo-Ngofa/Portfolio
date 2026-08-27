@@ -86,19 +86,20 @@ const SITE = {
   },*/
 
   about: {
-    eyebrow: "About CSC",
-    heading: "Practical tools, grounded in how businesses actually work.",
+    eyebrow: "About",
+    heading: "Building beyond the obvious.",
     body: [
-      "CSC combines operational expertise with hands-on technical capability to build tools that solve real business problems.",
-      "The focus is on making complex information easier to understand, reducing unnecessary manual work and creating systems that people can actually use.",
-      "The result is not technology for its own sake. It is a clearer view of what is happening, a better way of working and more useful information for the people making decisions."
+      "Curiosity drives the search for a better way. Imagination opens up the possibilities.",
+      "The challenge is working out how to turn an idea into something that works and that people can actually use.",
+      "That approach has shaped a career working inside growing businesses and often building what was needed from scratch.",
+      "The result is not a tool for its own sake. It is a clearer view of what is happening, and a more efficient way of working."
     ]
   },
 
   contact: {
     /* The section at the bottom of the homepage */
-    heading: "Have a problem worth solving?",
-    body: "Tell us what is not working and we will come back to you.",
+    heading: "Need a better way to work?",
+    body: "Tell us how we can help.",
     cta: "Get in touch",
 
     /* The contact page itself */
