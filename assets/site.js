@@ -175,7 +175,6 @@ function renderHome(style, bg){
     <p>${esc(h.body)}</p>
     <div class="cta">
       <a class="btn" href="#apps">${esc(h.cta)} ${arrow}</a>
-      <a class="btn outline" href="#how">How it works</a>
     </div>`;
 
   let hero;
@@ -226,7 +225,7 @@ function renderHome(style, bg){
     </div>
   </section>
 
-  <section class="sec light" id="how">
+  ${SITE.howItWorks ? `<section class="sec light" id="how">
     <div class="w">
       <div class="eyebrow">How it works</div>
       <div class="split">
@@ -238,7 +237,7 @@ function renderHome(style, bg){
           <b>0${i+1}</b><span>${esc(s)}</span></div>`).join("")}
       </div>
     </div>
-  </section>
+  </section>` : ""}
 
   <section class="sec" id="about">
     <div class="w">
