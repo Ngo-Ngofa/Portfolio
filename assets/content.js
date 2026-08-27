@@ -61,16 +61,16 @@ const SITE = {
 
   /* The four pillars shown as a strip on the homepage */
   pillars: [
-    { title: "Streamline", body: "Simplify processes and remove unnecessary steps." },
-    { title: "Automate",   body: "Take repetitive manual work off the team." },
-    { title: "Connect",    body: "Bring separate systems into a single view." },
-    { title: "Analyse",    body: "Turn the result into numbers people can act on." }
+    { title: "Identify", body: "Uncover the gaps and inefficiencies holding the business back." },
+    { title: "Connect",   body: "Bring disparate systems and information together." },
+    { title: "Build",    body: "Automate and build solutions around the needs of the business." },
+    { title: "Streamline",    body: "Eliminate friction and turn information into action." }
   ],
 
   /* The heading shown above the three app cards */
   appsHeading: "Apps",
 
-  howItWorks: {
+  /* howItWorks: {
     heading: "Find the problem. Build the solution.",
     body: [
       "Whether the challenge is fragmented data, a manual process, poor visibility or a gap in existing software, the solution is built around what the business actually needs."
@@ -81,7 +81,7 @@ const SITE = {
       "Automate where it makes sense",
       "Build what does not already exist"
     ]
-  },
+  },*/
 
   about: {
     heading: "Practical technology, grounded in how businesses actually work.",
