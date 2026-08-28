@@ -52,7 +52,7 @@ const SITE = {
   },
 
   intro: {
-    eyebrow: "What CSC does",
+    eyebrow: "What we do",
     heading: "Building solutions for business challenges.",
     body: [
       "Businesses lose time when data is spread across systems or lacks visibility for teams, when processes rely on manual work or existing systems are not quite up to scratch.",
