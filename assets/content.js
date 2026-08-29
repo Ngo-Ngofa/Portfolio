@@ -164,7 +164,7 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
 
-      headline: "See what customers are telling you before the problem gets bigger.",
+      headline: "Turn scattered customer data into valuable insights.",
       summary: "Customer feedback is spread across support tickets, emails, reviews, calls and other channels. Customer Insights brings those sources together, identifies emerging themes and puts business impact behind them.",
       strap: "Identify issues. Understand why they matter. Act earlier.",
 
@@ -191,7 +191,7 @@ const SITE = {
       results: [
         { figure: "4 weeks", label: "earlier detection of a product fault" },
         { figure: "£36k",    label: "value of catching one batch early" },
-        { figure: "6",       label: "sources brought together" }
+        { figure: "6",       label: "feedback channels brought together" }
       ],
 
       /* OPTIONAL: extra screenshots shown lower down the app page */
