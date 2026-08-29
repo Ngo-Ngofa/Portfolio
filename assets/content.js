@@ -142,7 +142,7 @@ const SITE = {
      labels block, see the note inside the first app below */
   appLabels: {
     problemEyebrow:  "The problem",
-    problemHeading:  " ",
+    problemHeading:  "Problem Test",
     solutionEyebrow: "The solution",
     featuresEyebrow: "Key features",
     featuresHeading: "What it does",
