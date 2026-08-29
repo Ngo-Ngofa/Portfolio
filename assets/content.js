@@ -137,6 +137,19 @@ const SITE = {
     body: "Thanks for getting in touch. You will hear back shortly.",
     cta: "Back to the apps"
   },
+/* The section labels used on every app page. Change one here and it changes
+     on all three apps at once. Any app can override any of these in its own
+     labels block, see the note inside the first app below */
+  appLabels: {
+    problemEyebrow:  "The problem",
+    problemHeading:  "What it solves",
+    solutionEyebrow: "The solution",
+    featuresEyebrow: "Key features",
+    featuresHeading: "What it does",
+    howEyebrow:      "How it works",
+    howHeading:      "Under the bonnet",
+    endHeading:      "See it running."
+  },
 
   /* ==========================================================================
      APPS
