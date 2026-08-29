@@ -20,6 +20,14 @@ function eyebrowHTML(block, fallback){
   return text ? `<div class="eyebrow">${esc(text)}</div>` : "";
 }
 
+/* labels on the app pages. Order of preference: the app's own labels block,
+   then the site wide SITE.appLabels, then the built in wording */
+function appLabel(a, key, fallback){
+  const own  = (a && a.labels) ? a.labels[key] : null;
+  const site = (SITE.appLabels || {})[key];
+  return own || site || fallback;
+}
+
 /* ------------------------------------------------------------- contact */
 /* contact.form in content.js decides what the contact page shows:
      an email address        a real form, sent by FormSubmit, no account needed
@@ -292,15 +300,15 @@ function renderApp(){
   </div></section>` : ""}
 
   <section class="block"><div class="w">
-    <div class="eyebrow">The problem</div>
+   <div class="eyebrow">${esc(appLabel(a, "problemEyebrow", "The problem"))}</div>
     <div class="split">
-      <h2>${esc(a.summaryHeading || "What it solves")}</h2>
+      <h2>${esc(appLabel(a, "problemHeading", "What it solves"))}</h2>
       ${colsHTML(a.problem)}
     </div>
   </div></section>
 
   <section class="block off"><div class="w">
-    <div class="eyebrow">The solution</div>
+   <div class="eyebrow">${esc(appLabel(a, "solutionEyebrow", "The solution"))}</div>
     <div class="split">
       <h2>${esc(a.strap)}</h2>
       ${colsHTML(a.solution)}
@@ -311,21 +319,21 @@ function renderApp(){
   </div></section>
 
   <section class="block"><div class="w">
-    <div class="eyebrow">Key features</div>
-    <h2>What it does</h2>
+   <div class="eyebrow">${esc(appLabel(a, "featuresEyebrow", "Key features"))}</div>
+    <h2>${esc(appLabel(a, "featuresHeading", "What it does"))}</h2>
     <ul class="feats">${a.features.map(f => `<li>${esc(f)}</li>`).join("")}</ul>
   </div></section>
 
   ${a.howItWorks ? `<section class="block light"><div class="w">
-    <div class="eyebrow">How it works</div>
+   <div class="eyebrow">${esc(appLabel(a, "howEyebrow", "How it works"))}</div>
     <div class="split">
-      <h2>Under the bonnet</h2>
+      <h2>${esc(appLabel(a, "howHeading", "Under the bonnet"))}</h2>
       ${colsHTML([a.howItWorks])}
     </div>
   </div></section>` : ""}
 
   <section class="endcta"><div class="w">
-    <h3>See it running.</h3>
+   <h3>${esc(appLabel(a, "endHeading", "See it running."))}</h3>
     <a class="btn" href="${a.launch}" target="_blank" rel="noopener">
       ${esc(a.launchLabel || "Launch prototype")} ${arrow}</a>
   </div></section>`);
