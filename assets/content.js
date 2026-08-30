@@ -145,9 +145,9 @@ const SITE = {
     problemHeading:  "Problem Test",
     solutionEyebrow: "The solution",
     featuresEyebrow: "Key features",
-    featuresHeading: "What it does",
-    howEyebrow:      "How it works",
-    howHeading:      "Under the bonnet",
+    featuresHeading: "",
+    howEyebrow:      "",
+    howHeading:      "",
     endHeading:      "See it running."
   },
 
@@ -198,7 +198,7 @@ const SITE = {
       gallery: ["assets/img/customer-insights-2.png"],
 
       /* OPTIONAL */
-      howItWorks: "Feeds from CRM, helpdesk, call transcripts, email and review platforms are normalised into a single record type. Every source is put through the same fixed set of questions, and it is the answers that make them comparable. Detection compares each theme's share of all feedback against its own thirteen week baseline."
+      /*howItWorks: "Feeds from CRM, helpdesk, call transcripts, email and review platforms are normalised into a single record type. Every source is put through the same fixed set of questions, and it is the answers that make them comparable. Detection compares each theme's share of all feedback against its own thirteen week baseline."*/
     },
 
     {
