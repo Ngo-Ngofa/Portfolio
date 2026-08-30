@@ -322,7 +322,7 @@ function renderApp(){
       <h2>${esc(a.strap)}</h2>
       ${colsHTML(a.solution)}
     </div>
-    ${a.gallery && a.gallery.length ? `<div class="gallery">
+     ${a.gallery && a.gallery.length ? `<div class="gallery${a.gallery.length === 1 ? " one" : ""}">
       ${a.gallery.map(g => `<figure><img src="${g}" alt="${esc(a.name)}" loading="lazy"></figure>`).join("")}
     </div>` : ""}
   </div></section>
