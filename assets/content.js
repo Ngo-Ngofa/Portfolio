@@ -164,7 +164,7 @@ const SITE = {
       image: "assets/img/customer-insights.png",
 
       problemHeading: "Multiple channels, no shared view.",
-      solutionHeading: "Identify issues. Understand why they matter. Act earlier.",
+      solutionHeading: "Turn scattered feedback into a clear picture.",
       headline: "Turn scattered customer data into valuable insights.",
       summary: "Customer feedback is spread across support tickets, emails, reviews, calls and other channels. Customer Insights brings those sources together",
       
@@ -175,8 +175,8 @@ const SITE = {
       ],
 
       solution: [
-        "Every source is brought into one shape without needing to match customers between them. The connection is the theme, not the person, which removes the hardest problem in this space entirely.",
-        "Each theme is measured against its own history rather than a single threshold, so seasonal patterns do not trigger false alarms. Anything running outside its usual range is flagged, priced, and traced back to the product and production batch it concentrates in."
+        "Feedback from multiple sources is brought into one view and grouped by theme, making it easier to see what is happening across the business rather than in isolated streams.",
+        "Each theme is measured against its own history, so normal fluctuations do not automatically become alarms. When something moves outside its usual range, the issue is surfaced and its impact quantified, including the cost of resolving it and the potential cost of losing the customers affected."
       ],
 
       features: [
