@@ -142,7 +142,6 @@ const SITE = {
      labels block, see the note inside the first app below */
   appLabels: {
     problemEyebrow:  "The problem",
-    problemHeading:  "Problem Test",
     solutionEyebrow: "The solution",
     featuresEyebrow: "",
     featuresHeading: "Key Features",
@@ -164,9 +163,11 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
 
+      problemHeading: "Six inboxes, one blind spot.",
+      solutionHeading: "Identify issues. Understand why they matter. Act earlier.",
       headline: "Turn scattered customer data into valuable insights.",
       summary: "Customer feedback is spread across support tickets, emails, reviews, calls and other channels. Customer Insights brings those sources together, identifies emerging themes and puts business impact behind them.",
-      strap: "Identify issues. Understand why they matter. Act earlier.",
+      
 
       problem: [
         "Customer feedback arrives in six or seven different places at once. Support tickets, phone calls, emails, public reviews, reviews on a brand's own site. Each has its own inbox, its own dashboard and its own version of the truth.",
@@ -209,9 +210,11 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/forecasting-purchasing.png",
 
+      problemHeading: "The answer lives in one person's spreadsheet.",
+      solutionHeading: "See the stock position. Understand the forecast. Control the spend.",
       headline: "Know what you have, what you need and what is coming next.",
       summary: "A single operational view of stock, purchasing, transfers, incoming orders and spend. Designed to turn complex inventory data into clear purchasing decisions while giving operations and finance a shared view of the numbers.",
-      strap: "See the stock position. Understand the forecast. Control the spend.",
+   
 
       problem: [
         "Stock information usually lives in spreadsheets that one person maintains and everybody else has to ask about. The models themselves can be perfectly sound. The problem is access.",
@@ -251,9 +254,11 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
 
+      problemHeading: "Nobody checks the invoice.",
+      solutionHeading: "Spot overcharges. Understand costs. Protect margin.",
       headline: "Know what shipping really costs.",
       summary: "Carrier invoices, negotiated rates, surcharges and customer orders rarely line up neatly. Shipping & Logistics brings them together to identify anomalies, track freight costs and understand the true economics of shipping.",
-      strap: "Spot overcharges. Understand costs. Protect margin.",
+     
 
       problem: [
         "Checking carrier invoices properly means modelling every negotiated rate and applying it to every order. That is why it usually does not happen, and why overcharges get paid without anybody noticing.",
