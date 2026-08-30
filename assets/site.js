@@ -311,7 +311,7 @@ function renderApp(){
   <section class="block"><div class="w">
    ${appEyebrow(a, "problemEyebrow", "The problem")}
     <div class="split">
-      ${appHeading(a, "problemHeading", "What it solves")}
+      ${a.problemHeading ? `<h2>${esc(a.problemHeading)}</h2>` : ""}
       ${colsHTML(a.problem)}
     </div>
   </div></section>
@@ -319,7 +319,7 @@ function renderApp(){
   <section class="block off"><div class="w">
    ${appEyebrow(a, "solutionEyebrow", "The solution")}
     <div class="split">
-      <h2>${esc(a.strap)}</h2>
+      ${a.solutionHeading ? `<h2>${esc(a.solutionHeading)}</h2>` : ""}
       ${colsHTML(a.solution)}
     </div>
      ${a.gallery && a.gallery.length ? `<div class="gallery${a.gallery.length === 1 ? " one" : ""}">
