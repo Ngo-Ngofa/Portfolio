@@ -354,3 +354,6 @@ footer a:hover{color:#fff}
 
 .endcta{background:var(--navy);padding:76px 0;text-align:center;color:#fff}
 .endcta h3{font-size:30px;margin-bottom:24px;color:#fff}
+
+/* a single screenshot in the solution block sits centred instead of half width */
+.gallery.one{grid-template-columns:minmax(0,860px);justify-content:center}
