@@ -327,11 +327,11 @@ function renderApp(){
     </div>` : ""}
   </div></section>
 
-  <section class="block"><div class="w">
-   ${appEyebrow(a, "featuresEyebrow", "Key features")}
+   ${a.features && a.features.length ? `<section class="block"><div class="w">
+    ${appEyebrow(a, "featuresEyebrow", "Key features")}
     ${appHeading(a, "featuresHeading", "What it does")}
     <ul class="feats">${a.features.map(f => `<li>${esc(f)}</li>`).join("")}</ul>
-  </div></section>
+  </div></section>` : ""}
 
   ${a.howItWorks ? `<section class="block light"><div class="w">
    ${appEyebrow(a, "howEyebrow", "How it works")}
