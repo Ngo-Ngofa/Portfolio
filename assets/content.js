@@ -171,7 +171,7 @@ const SITE = {
 
       problem: [
         "Customer feedback can be spread across several different places susch Support tickets, phone calls and public reviews. Each has its own inbox and only shows part of the picture.",
-        "This makes patterns difficult to see and isssues hard to qunatify. The cost of that only becomes obvious when something goes wrong."
+        "This makes patterns difficult to see and isssues hard to qunatify. A real product issue could stay hidden in the noise, while the focus is on things that may not matter. The cost of that only becomes obvious when something goes wrong."
       ],
 
       solution: [
