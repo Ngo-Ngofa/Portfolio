@@ -163,15 +163,15 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
 
-      problemHeading: "Six inboxes, one blind spot.",
+      problemHeading: "Multiple channels, no shared view.",
       solutionHeading: "Identify issues. Understand why they matter. Act earlier.",
       headline: "Turn scattered customer data into valuable insights.",
-      summary: "Customer feedback is spread across support tickets, emails, reviews, calls and other channels. Customer Insights brings those sources together, identifies emerging themes and puts business impact behind them.",
+      summary: "Customer feedback is spread across support tickets, emails, reviews, calls and other channels. Customer Insights brings those sources together",
       
 
       problem: [
-        "Customer feedback arrives in six or seven different places at once. Support tickets, phone calls, emails, public reviews, reviews on a brand's own site. Each has its own inbox, its own dashboard and its own version of the truth.",
-        "The cost of that only becomes obvious when something goes wrong. A genuine product fault shows up as a small rise in three separate systems that nobody is watching together, and by the time it is undeniable it has been shipping for weeks."
+        "Customer feedback can be spread across several different places susch Support tickets, phone calls and public reviews. Each has its own inbox and only shows part of the picture.",
+        "This makes patterns difficult to see and isssues hard to qunatify. The cost of that only becomes obvious when something goes wrong."
       ],
 
       solution: [
