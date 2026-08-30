@@ -190,9 +190,10 @@ const SITE = {
 
       /* OPTIONAL: delete this block if an app has no results yet */
       results: [
-        { figure: "4 weeks", label: "earlier detection of a product fault" },
-        { figure: "£36k",    label: "value of catching one batch early" },
-        { figure: "6",       label: "feedback channels brought together" }
+        { figure: "6",       label: "feedback channels brought into one view" },
+        { figure: "11%", label: "increase in positive feedback" },
+        { figure: "£2000",    label: "saved on average each month from customers retained" }
+        
       ],
 
       /* OPTIONAL: extra screenshots shown lower down the app page */
