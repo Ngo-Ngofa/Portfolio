@@ -159,7 +159,7 @@ const SITE = {
       id: "customer-insights",
       name: "Customer Insights",
       cardLine: "Turning scattered customer data into valuable insights",
-      launch: "https://cosmossytems.com/customerinsights/",
+      launch: "/customerinsights/",
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
 
@@ -208,7 +208,7 @@ const SITE = {
       id: "forecasting-purchasing",
       name: "Forecasting & Purchasing",
       cardLine: "A clearer view of inventory, purchasing and spend.",
-      launch: "https://ngo-ngofa.github.io/Purchasing-App/",
+      launch: "/purchasing/",
       launchLabel: "Launch prototype",
       image: "assets/img/forecasting-purchasing.png",
 
@@ -252,7 +252,7 @@ const SITE = {
       id: "shipping-logistics",
       name: "Shipping & Logistics",
       cardLine: "Understanding the full and true costs of shipping.",
-      launch: "https://ngo-ngofa.github.io/Shipping-Analyser/demo.html",
+      launch: "/shippinganalyser/",
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
 
