@@ -238,9 +238,9 @@ const SITE = {
       ],
 
       results: [
-        { figure: "75%",    label: "less time spent on purchasing decisions" },
-        { figure: "£300k",  label: "of stock brought into one view" },
-        { figure: "Still running", label: "in daily use, owned by the business" }
+        { figure: "75%",    label: "reduction in purchasing time" },
+        { figure: "100%",  label: "of spend within or below budget" },
+        { figure: "28%", label: "reduction in overstocks" }
       ],
 
       gallery: ["assets/img/forecasting-purchasing-2.png"],
