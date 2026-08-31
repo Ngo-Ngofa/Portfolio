@@ -212,15 +212,15 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/forecasting-purchasing.png",
 
-      problemHeading: "The answer lives in one person's spreadsheet.",
+      problemHeading: "When spreadsheets start to pile up",
       solutionHeading: "See the stock position. Understand the forecast. Control the spend.",
       headline: "A clearer view of stock. A tighter grip on spend.",
       summary: "A single operational view of stock, purchasing, transfers, incoming orders and spend. Designed to turn complex inventory data into clear purchasing decisions while giving operations and finance a shared view of the numbers.",
    
 
       problem: [
-        "Stock information usually lives in spreadsheets that one person maintains and everybody else has to ask about. The models themselves can be perfectly sound. The problem is access.",
-        "Finance cannot see what has been spent, what is still to come, or how any of it is tracking against budget without going through the same person every time. Ordering decisions take a day because the answer has to be assembled by hand."
+        "Stock models in spreadsheets work fine, but rely on interpretation and, ultimately, manual maintenance from the owner.",
+        "The wider team lacks the visibilty of the current position and time is spent explaining purchasing decisions and creating fresh reports."
       ],
 
       solution: [
