@@ -190,9 +190,10 @@ const SITE = {
 
       /* OPTIONAL: delete this block if an app has no results yet */
       results: [
-        { figure: "6",       label: "feedback channels brought into one view" },
+        { figure: "£2000",    label: "saved on average each month from customers retained" },
         { figure: "11%", label: "increase in positive feedback" },
-        { figure: "£2000",    label: "saved on average each month from customers retained" }
+        { figure: "6",       label: "feedback channels brought into one view" }
+        
         
       ],
 
@@ -213,7 +214,7 @@ const SITE = {
 
       problemHeading: "The answer lives in one person's spreadsheet.",
       solutionHeading: "See the stock position. Understand the forecast. Control the spend.",
-      headline: "Know what you have, what you need and what is coming next.",
+      headline: "A clearer view of stock. A tighter grip on spend.",
       summary: "A single operational view of stock, purchasing, transfers, incoming orders and spend. Designed to turn complex inventory data into clear purchasing decisions while giving operations and finance a shared view of the numbers.",
    
 
