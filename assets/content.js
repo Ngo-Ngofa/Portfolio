@@ -256,36 +256,35 @@ const SITE = {
       launchLabel: "Launch prototype",
       image: "assets/img/shipping-logistics.png",
 
-      problemHeading: "Nobody checks the invoice.",
-      solutionHeading: "Spot overcharges. Understand costs. Protect margin.",
-      headline: "Know what shipping really costs.",
+      problemHeading: "Real costs are buried in the detail",
+      solutionHeading: "Every invoice fully reconciled",
+      headline: "See the true cost of every shipment.",
       summary: "Carrier invoices, negotiated rates, surcharges and customer orders rarely line up neatly. Shipping & Logistics brings them together to identify anomalies, track freight costs and understand the true economics of shipping.",
      
 
       problem: [
-        "Checking carrier invoices properly means modelling every negotiated rate and applying it to every order. That is why it usually does not happen, and why overcharges get paid without anybody noticing.",
-        "The larger cost is not the overcharges. It is that nobody can say what a lane actually costs, whether the charge made to the customer still makes sense, or how much margin is being given away in discounts and free shipping."
+         "Carrier invoices vary in formats, combining contracted rates with fuel surcharges, brokerage and other additional charges. Reconciling these against sales orders and the relevant rate cards can be time consuming and inaccurate with significant volume.",
+         "Freight costs were not always easy to attribute to the relevant sales order, making it harder to assess true order margin or determine whether shipping charges to customers reflected the actual cost."
       ],
 
       solution: [
-        "Invoices from multiple carriers are read and reconciled against the negotiated rate card line by line, with anything that does not match flagged for investigation.",
-        "Freight cost is matched back to the sales order, so shipping margin becomes a number rather than a guess. Fuel surcharges are tracked as they move rather than at month end, and overdue invoices surface for credit control."
+         "Invoices from multiple carriers are brought into a single view and reconciled line by line against the negotiated rate cards. Charges that fall outside of agreed rates are flagged, with additional fees such as fuel, brokerage and documentation clearly identified for review.",
+         "Freight costs are matched back to the relevant sales order, giving a true picture of shipping margin rather than an estimate. Fuel surcharges are tracked as they change, while overdue invoices surface for credit control and discounts or free shipping are visible in the overall cost."
       ],
 
       features: [
-        "Two carrier invoice formats parsed and reconciled automatically",
-        "Every line checked against the negotiated rate card",
+        "Multi carrier invoice ingestion and reconciliation",
         "Anomalies and overcharges flagged as soon as the invoice lands",
         "Freight cost matched to sales orders for a true shipping margin",
         "Fuel surcharges tracked in real time",
         "Overdue invoices surfaced for credit control",
-        "Discounts and free shipping made visible"
+        "Discounts and free shipping made visible and controlled"
       ],
 
       results: [
-        { figure: "2 hours", label: "monthly reconciliation, down from two weeks" },
-        { figure: "£10k",  label: "of surcharges recovered in three months" },
-        { figure: "Month end", label: "used by operations and finance" }
+        { figure: "2 hours", label: "monthly reconciliation, instead of 2 weeks" },
+        { figure: "£1000s",  label: "of surcharges caught and reclaimed" },
+        { figure: "3", label: "loss making lanes identified and rectified" }
       ],
 
       gallery: ["assets/img/shipping-logistics-2.png", "assets/img/shipping-logistics-3.png"],
