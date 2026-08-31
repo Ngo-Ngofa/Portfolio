@@ -159,7 +159,7 @@ const SITE = {
       id: "customer-insights",
       name: "Customer Insights",
       cardLine: "Turning scattered customer data into valuable insights",
-      launch: "https://ngo-ngofa.github.io/Customer-Insights/",
+      launch: "https://cosmossytems.com/customerinsights/",
       launchLabel: "Launch prototype",
       image: "assets/img/customer-insights.png",
 
