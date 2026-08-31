@@ -170,13 +170,13 @@ const SITE = {
       
 
       problem: [
-        "Customer feedback can be spread across several different places susch Support tickets, phone calls and public reviews. Each has its own inbox and only shows part of the picture.",
-        "This makes patterns difficult to see and isssues hard to qunatify. A real product issue could stay hidden in the noise, while the focus is on things that may not matter. The cost of that only becomes obvious when something goes wrong."
+        "Customer feedback can be spread across several different places susch Support tickets, phone calls and public reviews. Each has its own inbox and only shows part of the picture. This makes patterns difficult to see and isssues hard to qunatify.",
+        "A real product issue could stay hidden in the noise, while the focus is on things that may not matter. The cost of that only becomes obvious when something goes wrong."
       ],
 
       solution: [
-        "Feedback from multiple sources is brought into one view and grouped by theme, making it easier to see what is happening across the business rather than in isolated streams.",
-        "Each theme is measured against its own history, so normal fluctuations do not automatically become alarms. When something moves outside its usual range, the issue is surfaced and its impact quantified, including the cost of resolving it and the potential cost of losing the customers affected."
+        "Feedback from multiple sources is brought into one view and grouped by theme, making it easier to see what is happening across the business rather than in isolated streams. Each theme is measured against its own history, so normal fluctuations do not automatically become alarms.",
+        "When something moves outside its usual range, the issue is surfaced and its impact quantified, including the cost of resolving it and the potential cost of losing the customers affected."
       ],
 
       features: [
