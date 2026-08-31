@@ -219,8 +219,8 @@ const SITE = {
    
 
       problem: [
-        "Stock models in spreadsheets work fine, but rely on interpretation and, ultimately, manual maintenance from the owner.",
-        "The wider team lacks the visibilty of the current position and time is spent explaining purchasing decisions and creating fresh reports."
+        "Stock models in spreadsheets work fine, but rely on interpretation and, ultimately, manual maintenance from the owner. As the business grows across locations and SKUs, keeping the model current becomes a regular task.",
+        "The wider team lacks the visibilty of the current position, slow-moving and excess stock can also be harder to spot, making it more difficult to prioritise where cash is tied up. And time is spent explaining purchasing decisions and creating fresh reports."
       ],
 
       solution: [
