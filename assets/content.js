@@ -213,7 +213,7 @@ const SITE = {
       image: "assets/img/forecasting-purchasing.png",
 
       problemHeading: "When spreadsheets start to pile up",
-      solutionHeading: "See the stock position. Understand the forecast. Control the spend.",
+      solutionHeading: "A single view of stock and spend",
       headline: "A clearer view of stock. A tighter grip on spend.",
       summary: "A single operational view of stock, purchasing, transfers, incoming orders and spend. Designed to turn complex inventory data into clear purchasing decisions while giving operations and finance a shared view of the numbers.",
    
