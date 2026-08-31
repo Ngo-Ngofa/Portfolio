@@ -224,8 +224,8 @@ const SITE = {
       ],
 
       solution: [
-        "One view the whole team can open. It reads live data and answers the questions people were queuing up to ask: what needs ordering, what should move between locations, what is already inbound, what has been spent and how that is tracking against budget.",
-        "Reorder recommendations account for lead time, usage and safety stock, and differ by location where the stock structure differs. Every number opens into an audit panel showing exactly how it was calculated, so nobody has to take it on trust."
+        "Live stock and sales data are brought together to show what’s needed at each location. Purchase orders, receipts and budget data make it easy to see what’s being spent and where it sits against plan.",
+        "The system calculates reorder recommendations using lead time, usage and safety stock, with different requirements by location. The result is a live view of stock and spend that the whole team can work from."
       ],
 
       features: [
