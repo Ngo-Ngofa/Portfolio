@@ -180,12 +180,12 @@ const SITE = {
       ],
 
       features: [
-        "Six feedback sources brought into a single view",
-        "Themes tracked against their own historical range, so a busy week does not set off every alarm",
-        "Cost of each issue built from replacement, refund and lost customer value",
-        "Alerts show how many independent sources corroborate them",
-        "Twelve month alert history, so recurring problems become visible",
-        "Every figure opens to show the calculation behind it"
+        "Bring feedback from multiple channels together in one place.",
+        "Group feedback to see what customers keep talking about.",
+        "Identify emerging customer and product issues before they get buried.",
+        "Compare themes against a rolling 13-week history to separate real shifts from seasonal noise.",
+        "Show the potential cost of losing customers, based on acquisition cost.",
+        "Compare the cost of fixing an issue with the potential cost of leaving it unresolved."
       ],
 
       /* OPTIONAL: delete this block if an app has no results yet */
