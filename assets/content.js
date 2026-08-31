@@ -197,7 +197,7 @@ const SITE = {
       ],
 
       /* OPTIONAL: extra screenshots shown lower down the app page */
-      gallery: ["assets/img/customer-insights-2.png"],
+      gallery: ["assets/img/customer-insights-2.png","assets/img/customer-insights-3.png"],
 
       /* OPTIONAL */
       /*howItWorks: "Feeds from CRM, helpdesk, call transcripts, email and review platforms are normalised into a single record type. Every source is put through the same fixed set of questions, and it is the answers that make them comparable. Detection compares each theme's share of all feedback against its own thirteen week baseline."*/
