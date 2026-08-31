@@ -229,12 +229,12 @@ const SITE = {
       ],
 
       features: [
-        "4,000 SKUs across two locations in a single view",
-        "Reorder status on every item, with the calculation visible on the row",
+        "Live stock positions across all locations in a single view",
+        "Reorder status on every item based on leadtime, planned usage and safety stock",
         "Spend against budget in real time, with drill down to the invoice lines",
         "Kit allocation showing what can actually be built once shared components are claimed",
-        "Period aware profit and loss, with a revenue cascade so figures stay meaningful before invoicing catches up",
-        "Daily audit snapshots"
+        "Period aware profit and loss, where figures stay meaningful before invoicing catches up",
+        "Purchase order and inbound tracking"
       ],
 
       results: [
