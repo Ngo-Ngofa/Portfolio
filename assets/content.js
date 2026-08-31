@@ -243,7 +243,7 @@ const SITE = {
         { figure: "28%", label: "reduction in overstocks" }
       ],
 
-      gallery: ["assets/img/forecasting-purchasing-2.png"],
+      gallery: ["assets/img/forecasting-purchasing-2.png","assets/img/forecasting-purchasing-3.png"],
 
       /*howItWorks: "Live ERP data through BigQuery, combined with weekly uploads and reference tables held by the business itself. Built on tools the team already had, so it runs with no servers, no licences and no ongoing cost, and can be maintained without technical help."*/
     },
