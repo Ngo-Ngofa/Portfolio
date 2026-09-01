@@ -337,7 +337,7 @@ function renderApp(){
    ${appEyebrow(a, "howEyebrow", "How it works")}
     <div class="split">
       ${appHeading(a, "howHeading", "Under the bonnet")}
-      ${colsHTML([a.howItWorks])}
+      ${colsHTML(a.howItWorks)}
     </div>
   </div></section>` : ""}
 
