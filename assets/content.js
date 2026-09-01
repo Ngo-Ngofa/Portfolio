@@ -155,6 +155,53 @@ const SITE = {
      ======================================================================= */
   apps: [
 
+      {
+      id: "shipping-logistics",
+      name: "Shipping & Logistics",
+      cardLine: "Understanding the full and true costs of shipping.",
+      launch: "/shippinganalyser/",
+      launchLabel: "Launch prototype",
+      image: "assets/img/shipping-logistics.png",
+
+      problemHeading: "Real costs are buried in the detail",
+      solutionHeading: "Every invoice fully reconciled",
+      headline: "See the true cost of every shipment.",
+      summary: "Carrier invoices, negotiated rates, surcharges and customer orders rarely line up neatly. Shipping & Logistics brings them together to identify anomalies, track freight costs and understand the true economics of shipping.",
+     
+
+      problem: [
+         "Carrier invoices vary in formats, combining contracted rates with fuel surcharges, brokerage and other additional charges. Reconciling these against sales orders and the relevant rate cards can be time consuming and inaccurate with significant volume.",
+         "Freight costs were not always easy to attribute to the relevant sales order, making it harder to assess true order margin or determine whether shipping charges to customers reflected the actual cost."
+      ],
+
+      solution: [
+         "Invoices from multiple carriers are brought into a single view and reconciled line by line against the negotiated rate cards. Charges that fall outside of agreed rates are flagged, with additional fees such as fuel, brokerage and documentation clearly identified for review.",
+         "Freight costs are matched back to the relevant sales order, giving a true picture of shipping margin rather than an estimate. Fuel surcharges are tracked as they change, while overdue invoices surface for credit control and discounts or free shipping are visible in the overall cost."
+      ],
+
+      features: [
+        "Multi carrier invoice ingestion and reconciliation",
+        "Anomalies and overcharges flagged as soon as the invoice lands",
+        "Freight cost matched to sales orders for a true shipping margin",
+        "Fuel surcharges tracked in real time",
+        "Overdue invoices surfaced for credit control",
+        "Discounts and free shipping made visible and controlled"
+      ],
+
+      results: [
+        { figure: "2 hours", label: "monthly reconciliation, instead of 2 weeks" },
+        { figure: "£1000s",  label: "of surcharges caught and reclaimed" },
+        { figure: "3", label: "loss making lanes identified and rectified" }
+      ],
+
+      gallery: ["assets/img/shipping-logistics-2.png", "assets/img/shipping-logistics-3.png"],
+
+      howItWorks: ["Carrier invoice data is parsed line by line so each charge can be identified, categorised and checked against both the carrier's invoice total and the negotiated rate card. Accounting data is handled separately: sales invoice lines and vendor ledger entries are pulled from the ERP through BigQuery, published to the system nightly, and joined with the carrier data so freight costs can be tied back to the relevant sales and accounting records.",
+                   "A Cloudflare Worker handles the ingestion and storage layer and exposes the resulting data through a small API. Corrections are stored separately as an overlay, so missing references can be added without changing the original invoice data. The dashboard is a self-contained HTML application that reads from the API, leaving the source data, processing and presentation as separate layers."
+         
+      ]
+   },
+
     {
       id: "customer-insights",
       name: "Customer Insights",
@@ -250,54 +297,8 @@ const SITE = {
       howItWorks: ["The data layer is built around BigQuery and Google Sheets. Nightly BigQuery views expose ERP data across tables such item ledger, sales lines, posted shipments, and a further set of supporting tables. Connected Sheets makes these views available in the working model, alongside weekly and monthly uploads for the sales pipeline and other workbooks. Static data like Bills of materials, vendor details, budget targets are maintained as reference tables within the Sheet, which acts as the persistent store.",
        "Apps Script provides both the application backend and its single deployment endpoint. Each refresh consolidates the source and reference data, applies the reorder model at item and location level. Revenue is calculated through a cascade from invoiced lines to open sales orders and then list price, keeping recent periods usable before invoicing is complete. The resulting dataset is returned as a single JSON payload for the front end, including the dashboard views and underlying drill-downs.
                    ]
-    },
-
-    {
-      id: "shipping-logistics",
-      name: "Shipping & Logistics",
-      cardLine: "Understanding the full and true costs of shipping.",
-      launch: "/shippinganalyser/",
-      launchLabel: "Launch prototype",
-      image: "assets/img/shipping-logistics.png",
-
-      problemHeading: "Real costs are buried in the detail",
-      solutionHeading: "Every invoice fully reconciled",
-      headline: "See the true cost of every shipment.",
-      summary: "Carrier invoices, negotiated rates, surcharges and customer orders rarely line up neatly. Shipping & Logistics brings them together to identify anomalies, track freight costs and understand the true economics of shipping.",
-     
-
-      problem: [
-         "Carrier invoices vary in formats, combining contracted rates with fuel surcharges, brokerage and other additional charges. Reconciling these against sales orders and the relevant rate cards can be time consuming and inaccurate with significant volume.",
-         "Freight costs were not always easy to attribute to the relevant sales order, making it harder to assess true order margin or determine whether shipping charges to customers reflected the actual cost."
-      ],
-
-      solution: [
-         "Invoices from multiple carriers are brought into a single view and reconciled line by line against the negotiated rate cards. Charges that fall outside of agreed rates are flagged, with additional fees such as fuel, brokerage and documentation clearly identified for review.",
-         "Freight costs are matched back to the relevant sales order, giving a true picture of shipping margin rather than an estimate. Fuel surcharges are tracked as they change, while overdue invoices surface for credit control and discounts or free shipping are visible in the overall cost."
-      ],
-
-      features: [
-        "Multi carrier invoice ingestion and reconciliation",
-        "Anomalies and overcharges flagged as soon as the invoice lands",
-        "Freight cost matched to sales orders for a true shipping margin",
-        "Fuel surcharges tracked in real time",
-        "Overdue invoices surfaced for credit control",
-        "Discounts and free shipping made visible and controlled"
-      ],
-
-      results: [
-        { figure: "2 hours", label: "monthly reconciliation, instead of 2 weeks" },
-        { figure: "£1000s",  label: "of surcharges caught and reclaimed" },
-        { figure: "3", label: "loss making lanes identified and rectified" }
-      ],
-
-      gallery: ["assets/img/shipping-logistics-2.png", "assets/img/shipping-logistics-3.png"],
-
-      howItWorks: ["Carrier invoice data is parsed line by line so each charge can be identified, categorised and checked against both the carrier's invoice total and the negotiated rate card. Accounting data is handled separately: sales invoice lines and vendor ledger entries are pulled from the ERP through BigQuery, published to the system nightly, and joined with the carrier data so freight costs can be tied back to the relevant sales and accounting records.",
-                   "A Cloudflare Worker handles the ingestion and storage layer and exposes the resulting data through a small API. Corrections are stored separately as an overlay, so missing references can be added without changing the original invoice data. The dashboard is a self-contained HTML application that reads from the API, leaving the source data, processing and presentation as separate layers."
-         
-      ]
-   }
+    }
+   
 
   ],
 
