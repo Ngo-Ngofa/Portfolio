@@ -201,7 +201,9 @@ const SITE = {
       gallery: ["assets/img/customer-insights-2.png","assets/img/customer-insights-3.png"],
 
       /* OPTIONAL */
-      howItWorks: "Feeds from CRM, helpdesk, call transcripts, email and review platforms are normalised into a single record type. Every source is put through the same fixed set of questions, and it is the answers that make them comparable. Detection compares each theme's share of all feedback against its own thirteen we"
+      howItWorks: ["Api integrations pull data from various sources such as Zendesk and Trustpilot twice daily with webhooks providing event-driven updates where supported. A managed integration platform handles standard systems, with custom integrations for those it does not support. A modelling layer then applies a fixed extraction schema across every source, turning calls, support tickets, emails and reviews into a common structure with one record for each issue raised.",
+                   "The resulting records are enriched with theme, sentiment, product and severity, with the business-specific logic held separately in theme and product reference tables. These define the classification, ownership, severity and cost rules, alongside product and sales data. The presentation layer reads from this processed dataset rather than the source systems, keeping the integrations, processing and business rules separate."
+                   ]
     },
 
     {
