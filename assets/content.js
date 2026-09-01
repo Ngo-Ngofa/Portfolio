@@ -247,7 +247,9 @@ const SITE = {
 
       gallery: ["assets/img/forecasting-purchasing-2.png","assets/img/forecasting-purchasing-3.png"],
 
-      howItWorks: "Live ERP data through BigQuery, combined with weekly uploads and reference tables held by the business itself. Built on tools the team already had, so it runs with no servers, no licences and no ongoing cost, and can be maintained without technical help."
+      howItWorks: ["The data layer is built around BigQuery and Google Sheets. Nightly BigQuery views expose ERP data across tables such item ledger, sales lines, posted shipments, and a further set of supporting tables. Connected Sheets makes these views available in the working model, alongside weekly and monthly uploads for the sales pipeline and other workbooks. Static data like Bills of materials, vendor details, budget targets are maintained as reference tables within the Sheet, which acts as the persistent store.",
+       "Apps Script provides both the application backend and its single deployment endpoint. Each refresh consolidates the source and reference data, applies the reorder model at item and location level. Revenue is calculated through a cascade from invoiced lines to open sales orders and then list price, keeping recent periods usable before invoicing is complete. The resulting dataset is returned as a single JSON payload for the front end, including the dashboard views and underlying drill-downs.
+                   ]
     },
 
     {
@@ -291,8 +293,11 @@ const SITE = {
 
       gallery: ["assets/img/shipping-logistics-2.png", "assets/img/shipping-logistics-3.png"],
 
-      howItWorks: "A nightly sync pulls accounting data from the ERP. Carrier invoices and rate cards are parsed in the browser, including two entirely different file formats and a three step country to zone lookup. The whole application is served from a single serverless deployment."
-    }
+      howItWorks: ["Carrier invoice data is parsed line by line so each charge can be identified, categorised and checked against both the carrier's invoice total and the negotiated rate card. Accounting data is handled separately: sales invoice lines and vendor ledger entries are pulled from the ERP through BigQuery, published to the system nightly, and joined with the carrier data so freight costs can be tied back to the relevant sales and accounting records.",
+                   "A Cloudflare Worker handles the ingestion and storage layer and exposes the resulting data through a small API. Corrections are stored separately as an overlay, so missing references can be added without changing the original invoice data. The dashboard is a self-contained HTML application that reads from the API, leaving the source data, processing and presentation as separate layers."
+         
+      ]
+   }
 
   ],
 
