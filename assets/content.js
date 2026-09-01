@@ -295,7 +295,7 @@ const SITE = {
       gallery: ["assets/img/forecasting-purchasing-2.png","assets/img/forecasting-purchasing-3.png"],
 
       howItWorks: ["The data layer is built around BigQuery and Google Sheets. Nightly BigQuery views expose ERP data across tables such item ledger, sales lines, posted shipments, and a further set of supporting tables. Connected Sheets makes these views available in the working model, alongside weekly and monthly uploads for the sales pipeline and other workbooks. Static data like Bills of materials, vendor details, budget targets are maintained as reference tables within the Sheet, which acts as the persistent store.",
-       "Apps Script provides both the application backend and its single deployment endpoint. Each refresh consolidates the source and reference data, applies the reorder model at item and location level. Revenue is calculated through a cascade from invoiced lines to open sales orders and then list price, keeping recent periods usable before invoicing is complete. The resulting dataset is returned as a single JSON payload for the front end, including the dashboard views and underlying drill-downs.
+       "Apps Script provides both the application backend and its single deployment endpoint. Each refresh consolidates the source and reference data, applies the reorder model at item and location level. Revenue is calculated through a cascade from invoiced lines to open sales orders and then list price, keeping recent periods usable before invoicing is complete. The resulting dataset is returned as a single JSON payload for the front end, including the dashboard views and underlying drill-downs."
                    ]
     }
    
