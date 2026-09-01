@@ -245,7 +245,7 @@ const SITE = {
 
       gallery: ["assets/img/forecasting-purchasing-2.png","assets/img/forecasting-purchasing-3.png"],
 
-      /*howItWorks: "Live ERP data through BigQuery, combined with weekly uploads and reference tables held by the business itself. Built on tools the team already had, so it runs with no servers, no licences and no ongoing cost, and can be maintained without technical help."*/
+      howItWorks: "Live ERP data through BigQuery, combined with weekly uploads and reference tables held by the business itself. Built on tools the team already had, so it runs with no servers, no licences and no ongoing cost, and can be maintained without technical help."
     },
 
     {
@@ -289,7 +289,7 @@ const SITE = {
 
       gallery: ["assets/img/shipping-logistics-2.png", "assets/img/shipping-logistics-3.png"],
 
-      /*howItWorks: "A nightly sync pulls accounting data from the ERP. Carrier invoices and rate cards are parsed in the browser, including two entirely different file formats and a three step country to zone lookup. The whole application is served from a single serverless deployment."*/
+      howItWorks: "A nightly sync pulls accounting data from the ERP. Carrier invoices and rate cards are parsed in the browser, including two entirely different file formats and a three step country to zone lookup. The whole application is served from a single serverless deployment."
     }
 
   ],
