@@ -23,7 +23,7 @@ const SITE = {
     mark: "CSC",
     /* The full name. The last word drops onto a second line by itself */
     name: "Cosmos Systems Consulting",
-    email: "ngongofa@gmail.com",
+    email: "info@cosmossystems.com",
     location: "Ngo Ngofa",
     /* The button at the top right of every page. It opens the contact page */
     navCta: "Contact",
