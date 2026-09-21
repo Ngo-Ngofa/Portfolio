@@ -351,220 +351,441 @@ function renderApp(){
 }
 
 /* =============================================================================
-   PASTE 1 of 3  ->  assets/content.js
+   PASTE 2 of 3  ->  assets/site.js
 
-   A.  Add the Advisory link to the nav list near the top of the file, so it
-       reads:
-
-           nav: [
-             { label: "Apps",     href: "index.html#apps" },
-             { label: "Advisory", href: "advisory.html" },
-             { label: "About",    href: "index.html#about" }
-           ],
-
-   B.  Paste everything below this comment into content.js, immediately after
-       the closing  },  of the  thanks:  block and before  appLabels:  .
-       Keep the final comma.
+   Paste everything below at the very END of site.js, after the closing brace
+   of renderApp(). Nothing already in the file changes.
    ========================================================================== */
 
-  advisory: {
+/* the shared panel: gradient, grid texture, glow, blur filter */
+function artFrame(id, stops){
+  return `<defs>
+    <linearGradient id="${id}-bg" x1="0" y1="0" x2="1" y2="1">${stops}</linearGradient>
+    <pattern id="${id}-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#BBDAF8" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="${id}-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#2A5390" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#2A5390" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="${id}-cglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FF676A" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#FF676A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="${id}-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="320" height="200" fill="url(#${id}-bg)"/>
+  <rect width="320" height="200" fill="url(#${id}-grid)"/>`;
+}
 
-  eyebrow: "Advisory",
-  heading: "Building the operational foundations",
-  headingAccent: "for growth.",
-  body: "Helping scaling consumer businesses make their operations simpler, sharper and ready for the stage that comes next.",
+const SKY = "#BBDAF8", CORAL = "#FF676A";
 
-  /* ---- the six service cards ---- */
-  areasShow: true,
-  areasEyebrow: "Where we help",
-  areasHeading: "Six places where growth usually starts to bite.",
-  areasIntro: "Open any card to see the shape of the problem and the work that answers it.",
-  areaColumns: 2,
-  moreLabel: "What this covers",
-  challengeLabel: "The challenge",
-  solutionsLabel: "The work",
+/* every glyph takes a colour so one item in a scene can be picked out in coral */
+const ICONS = {
 
-  areas: [
-    {
-      show: true,
-      title: "Process & Structure",
-      line: "When growth outpaces the way the business operates.",
-      art: "flow",
-      /* image: "assets/img/adv-process.jpg",   <- add to replace the drawing */
-      challenge: "Nobody designs a business to run this way. Processes accrete, one sensible decision at a time, until the shape of the operation reflects its history rather than its size. Ownership blurs at the edges, administration quietly expands to fill the day, and the answer to most questions turns out to live in one person's head. The structure that carried the last stage is usually the thing standing in the way of the next one.",
-      solutions: [
-        "End-to-end process mapping and redesign",
-        "Operating model and team structure",
-        "Roles, responsibilities and ownership",
-        "SOPs and operational documentation",
-        "Operational KPIs and performance management",
-        "Building and developing operations teams"
-      ]
-    },
-    {
-      show: true,
-      title: "Supply & Sourcing",
-      line: "A supply chain designed for the business you are becoming.",
-      art: "network",
-      challenge: "A supplier base assembled in the early days is chosen for availability and goodwill, which are the right criteria at the time and the wrong ones later. Terms go untested, capacity is planned against demand that has already been overtaken, and a single supplier quietly becomes a single point of failure. Supply risk is rarely invisible. It is just rarely looked at until the week it costs something.",
-      solutions: [
-        "Network design and supplier mapping",
-        "Strategic supplier selection and onboarding",
-        "Negotiations and commercial optimisation",
-        "Secondary sourcing and supply resilience",
-        "Supplier performance management",
-        "Capacity and supply risk planning",
-        "Expansion across DTC, retail, wholesale and marketplaces"
-      ]
-    },
-    {
-      show: true,
-      title: "Inventory & Demand Planning",
-      line: "The right stock, in the right place, at the right time.",
-      art: "levels",
-      challenge: "Stock is the most expensive opinion a business holds. Too little costs the sale and the customer behind it. Too much locks up the cash needed to grow. Without a forecast worth trusting, buying becomes reactive, safety stock becomes superstition, and lead times are discovered rather than planned for. Across several locations and channels, the spreadsheet that held it together becomes the risk.",
-      solutions: [
-        "Demand forecasting",
-        "Inventory planning and replenishment",
-        "Safety stock and reorder point modelling",
-        "Purchase planning",
-        "Inventory health and working capital",
-        "Multi-location and multi-channel planning",
-        "Planning for new products and markets"
-      ]
-    },
-    {
-      show: true,
-      title: "3PL & Fulfilment",
-      line: "Fulfilment that works across every channel.",
-      art: "routes",
-      challenge: "A 3PL chosen to ship parcels to consumers is rarely the partner that can also hit a retailer's delivery window or handle a marketplace's labelling rules. Service slips before anyone can prove it, surcharges appear faster than they can be explained, and warehouse performance stays hard to see from the outside. Moving provider is usually the right call and always the one that feels too risky to make.",
-      solutions: [
-        "Requirements definition and RFI/RFP management",
-        "3PL sourcing, scorecards and evaluation",
-        "Commercial and service-level negotiations",
-        "Warehouse and fulfilment process design",
-        "DTC, retail and marketplace fulfilment",
-        "Implementation and 3PL migration",
-        "Logistics cost and performance analysis"
-      ]
-    },
-    {
-      show: true,
-      title: "Technology, Automation & AI",
-      line: "Making technology work for the operation.",
-      art: "systems",
-      challenge: "Where systems do not talk to each other, people become the integration. Information is retyped between platforms, a weekly report takes an afternoon, and ERP data is accurate enough to be relied on and wrong often enough to be dangerous. The data almost always exists. It just does not reach the people who need it, and the software already paid for is doing a fraction of what it was bought to do.",
-      solutions: [
-        "ERP and WMS optimisation",
-        "Systems and data-flow mapping",
-        "Systems integration",
-        "Operational dashboards and reporting",
-        "Workflow automation",
-        "AI-enabled processes",
-        "Custom operational tools and apps"
-      ]
-    },
-    {
-      show: true,
-      title: "Customer Service",
-      line: "Customer service that scales with the business.",
-      art: "threads",
-      challenge: "Most customer service problems are operational problems wearing a different hat. Agents investigate by hand because order and stock information sits behind a system they cannot open. Routine queries absorb the capacity the difficult ones need, escalations are handled from memory, and a recurring fault is felt across the team for weeks before anyone can put a number on it.",
-      solutions: [
-        "Customer journey and service process mapping",
-        "Service workflows and escalation processes",
-        "Systems and data integration",
-        "Automated notifications and workflows",
-        "AI-assisted customer service",
-        "Customer insight and reporting",
-        "Feeding customer feedback back into operations"
-      ]
-    }
-  ],
+  person: (x, y, c = SKY, o = .85) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.7"
+        stroke-linecap="round">
+      <circle cx="${x}" cy="${y - 9}" r="4.8"/>
+      <path d="M${x - 9} ${y + 8} v-2.5 a9 9 0 0 1 18 0 v2.5"/>
+    </g>`,
 
-  /* ---- the case studies ---- */
-  casesShow: true,
-  casesEyebrow: "Case studies",
-  casesHeading: "What this has looked like in practice.",
-  caseColumns: 3,
-  caseMoreLabel: "The full story",
-  workLabel: "The work",
+  agent: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.7"
+        stroke-linecap="round">
+      <circle cx="${x}" cy="${y - 9}" r="5"/>
+      <path d="M${x - 10} ${y + 9} v-3 a10 10 0 0 1 20 0 v3"/>
+      <path d="M${x - 10} ${y - 11} a10 10 0 0 1 20 0"/>
+      <path d="M${x - 10} ${y - 11} v4 M${x + 10} ${y - 11} v4"/>
+      <path d="M${x + 10} ${y - 7} q0 7 -6 8"/>
+    </g>`,
 
-  cases: [
-    {
-      show: true,
-      title: "Retail, from a standing start to half the business",
-      line: "Building the operational infrastructure behind a DTC brand's move onto shelves",
-      art: "routes",
-      figs: [
-        { figure: "50%", label: "of the business from retail within 18 months" },
-        { figure: "TBC", label: "retail accounts supplied" },
-        { figure: "TBC", label: "reduction in cost per unit shipped" }
-      ],
-      body: "Retail asks a DTC operation to do things it has never had to do. Orders arrive by EDI rather than by website, delivery windows are measured in hours, and a missed one is charged for. Two growing consumer brands took on retail accounts at speed, and the operation behind them had to be built while existing DTC demand and a full launch calendar carried on untouched.",
-      work: [
-        "Established EDI and retail order processing from scratch",
-        "Worked directly with retailer supply chain teams to meet their compliance requirements",
-        "Built delivery and fulfilment processes against retailer service windows",
-        "Reviewed COGS and margin by account to test which listings were worth taking",
-        "Negotiated Incoterms and shipping arrangements",
-        "Rerouted shipping lanes to take cost out of the landed price",
-        "Held forecasting and supply together through major retail launches"
-      ]
-    },
-    {
-      show: true,
-      title: "A supply chain rebuilt ahead of the demand",
-      line: "Replacing a reactive supplier base before growth exposed it",
-      art: "network",
-      figs: [
-        { figure: "TBC", label: "reduction in unit cost through renegotiation" },
-        { figure: "TBC", label: "fall in stockouts across the range" },
-        { figure: "TBC", label: "growth in volume supported without supply failure" }
-      ],
-      body: "The business had suppliers. It did not have a supply chain. Agreements were informal, costs had never been tested against the market, and there was no forecast to buy against, so stockouts arrived on their own schedule. Each one landed at the worst possible moment, which is to say the moment demand was growing fastest.",
-      work: [
-        "Put strategic relationships and formal agreements in place with core suppliers",
-        "Renegotiated costs and commercial terms across the supplier base",
-        "Introduced secondary suppliers to add capacity and remove single points of failure",
-        "Selected and implemented a new 3PL",
-        "Built forecasting and inventory planning from nothing",
-        "Recruited and built the operations and customer service teams",
-        "Managed supply and capacity risk through a period of rapid demand growth"
-      ]
-    },
-    {
-      show: true,
-      title: "One connected view of an operation that had none",
-      line: "Rebuilding the data layer so the business could finally see itself",
-      art: "systems",
-      figs: [
-        { figure: "TBC", label: "hours a month of manual reporting removed" },
-        { figure: "TBC", label: "systems brought into one connected view" },
-        { figure: "TBC", label: "of freight spend reconciled automatically" }
-      ],
-      body: "Business Central held the data and nobody quite trusted it. Reporting was assembled by hand, forecasting did not exist as a capability, and a question as ordinary as what is in stock had to be routed through one person to get a reliable answer. The cost of that is not the reporting time. It is every decision made slightly late.",
-      work: [
-        "Cleaned and restructured Business Central data and the processes feeding it",
-        "Built additional functionality inside the ERP rather than around it",
-        "Connected Business Central to BigQuery as a reporting layer",
-        "Improved the connections between Business Central, HubSpot and Jira",
-        "Built HubSpot workflows and automations",
-        "Created operational dashboards the wider team could use unaided",
-        "Built a forecasting and purchasing application",
-        "Built a logistics tool tracking freight costs, invoices and surcharges"
-      ]
-    }
-  ],
+  factory: (x, y, c = SKY, o = .85) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - 15} ${y + 10} V${y - 2} l7.5 -7 v7 l7.5 -7 v7 l7.5 -7 v19 Z"/>
+      <path d="M${x - 9} ${y + 3} h4.5 M${x + 1} ${y + 3} h4.5" stroke-opacity="${o * .55}"/>
+    </g>`,
 
-  /* ---- the closing band ---- */
-  closeShow: true,
-  close: {
-    heading: "Scaling does not have to mean adding complexity.",
-    body: "The right processes, systems, suppliers and infrastructure create capacity for growth rather than overhead.",
-    cta: "Let's talk"
+  warehouse: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.7"
+        stroke-linejoin="round">
+      <path d="M${x - 21} ${y + 13} V${y - 2} l21 -11 l21 11 V${y + 13} Z"/>
+      <path d="M${x - 21} ${y + 2} h42" stroke-opacity="${o * .4}"/>
+      <rect x="${x - 7}" y="${y + 2}" width="14" height="11" rx="1"/>
+    </g>`,
+
+  box: (x, y, s = 9, c = SKY, o = .8, dash = "") =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.5"
+        ${dash ? `stroke-dasharray="${dash}"` : ""}>
+      <rect x="${x - s}" y="${y - s}" width="${s * 2}" height="${s * 2}" rx="1.5"/>
+      <path d="M${x - s} ${y - s / 2.2} h${s * 2}" stroke-opacity="${o * .5}"/>
+    </g>`,
+
+  truck: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - 20} ${y + 5} V${y - 9} h23 v14 Z"/>
+      <path d="M${x + 3} ${y + 5} V${y - 3} h8 l6 6 v2 Z"/>
+      <circle cx="${x - 11}" cy="${y + 8} " r="3.2"/>
+      <circle cx="${x + 9}" cy="${y + 8}" r="3.2"/>
+    </g>`,
+
+  shop: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - 16} ${y + 13} V${y - 3} h32 v16 Z"/>
+      <path d="M${x - 19} ${y - 3} h38 l-5 -8 h-28 Z"/>
+      <rect x="${x - 4}" y="${y + 3} " width="10" height="10" rx="1"/>
+    </g>`,
+
+  house: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - 15} ${y + 13} V${y - 1} l15 -12 l15 12 V${y + 13} Z"/>
+      <rect x="${x - 4}" y="${y + 3}" width="10" height="10" rx="1"/>
+    </g>`,
+
+  phone: (x, y, c = SKY, o = .9) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6">
+      <rect x="${x - 10}" y="${y - 15}" width="20" height="30" rx="3.5"/>
+      <path d="M${x - 4} ${y - 11} h8" stroke-opacity="${o * .5}"/>
+      <path d="M${x - 6} ${y - 2} h12 M${x - 6} ${y + 5} h7" stroke-opacity="${o * .5}"/>
+    </g>`,
+
+  database: (x, y, c = SKY, o = .85) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6">
+      <ellipse cx="${x}" cy="${y - 11}" rx="14" ry="5"/>
+      <path d="M${x - 14} ${y - 11} v15 a14 5 0 0 0 28 0 v-15"/>
+      <path d="M${x - 14} ${y - 3.5} a14 5 0 0 0 28 0" stroke-opacity="${o * .5}"/>
+    </g>`,
+
+  doc: (x, y, c = SKY, o = .85) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - 13} ${y + 17} V${y - 17} h17 l9 9 v25 Z"/>
+      <path d="M${x + 4} ${y - 17} v9 h9" stroke-opacity="${o * .5}"/>
+      <path d="M${x - 6} ${y - 1} h13 M${x - 6} ${y + 6} h13" stroke-opacity="${o * .5}"/>
+    </g>`,
+
+  tick: (x, y, c = CORAL, o = 1) =>
+    `<path d="M${x - 6} ${y} l4.5 4.5 L${x + 7} ${y - 6}" fill="none" stroke="${c}"
+       stroke-opacity="${o}" stroke-width="2" stroke-linecap="round"
+       stroke-linejoin="round"/>`,
+
+  bubble: (x, y, w = 34, h = 24, c = SKY, o = .8) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.6"
+        stroke-linejoin="round">
+      <path d="M${x - w / 2 + 5} ${y - h / 2} h${w - 10} a5 5 0 0 1 5 5 v${h - 10}
+        a5 5 0 0 1 -5 5 h-${w - 20} l-8 7 v-7 h-2 a5 5 0 0 1 -5 -5 v-${h - 10}
+        a5 5 0 0 1 5 -5 Z"/>
+      <path d="M${x - w / 2 + 10} ${y - 3} h${w * .5} M${x - w / 2 + 10} ${y + 4}
+        h${w * .3}" stroke-opacity="${o * .5}"/>
+    </g>`,
+
+  screen: (x, y, w, h, c = SKY, o = .8) =>
+    `<g fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.7"
+        stroke-linejoin="round">
+      <rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="7"/>
+      <path d="M${x} ${y + h / 2} v7 M${x - 11} ${y + h / 2 + 7} h22"
+        stroke-linecap="round"/>
+    </g>`,
+
+  spark: (x, y, c = CORAL, o = 1) =>
+    `<path d="M${x} ${y - 13} l3 7.5 7.5 3 -7.5 3 -3 7.5 -3 -7.5 -7.5 -3 7.5 -3 Z"
+       fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.7"
+       stroke-linejoin="round"/>`,
+
+  /* a connector drawn twice: thick and faint underneath, thin and clear on top */
+  link: (d, c = SKY, o = .45, dash = "") =>
+    `<path d="${d}" fill="none" stroke="${c}" stroke-opacity="${o * .3}" stroke-width="5"
+       stroke-linecap="round" stroke-linejoin="round"/>
+     <path d="${d}" fill="none" stroke="${c}" stroke-opacity="${o}" stroke-width="1.5"
+       stroke-linecap="round" stroke-linejoin="round"
+       ${dash ? `stroke-dasharray="${dash}"` : ""}/>`,
+
+  /* the same, in coral, with a glow behind it */
+  linkAccent: (d, id, dash = "") =>
+    `<path d="${d}" fill="none" stroke="${CORAL}" stroke-opacity=".5" stroke-width="4.5"
+       filter="url(#${id}-blur)" stroke-linejoin="round"/>
+     <path d="${d}" fill="none" stroke="${CORAL}" stroke-width="1.8" stroke-linecap="round"
+       stroke-linejoin="round" ${dash ? `stroke-dasharray="${dash}"` : ""}/>`
+};
+
+const I = ICONS;
+
+const ART = {
+
+  /* Process & Structure: a scattered team on the left, a clear structure on the
+     right, and the documented process that turns one into the other */
+  flow: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("fl", '<stop offset="0" stop-color="#071531"/><stop offset=".6" stop-color="#0B1D3A"/><stop offset="1" stop-color="#16315A"/>')}
+    <ellipse cx="150" cy="100" rx="140" ry="96" fill="url(#fl-glow)" opacity=".5"/>
+    <circle cx="44" cy="112" r="30" fill="url(#fl-cglow)"/>
+    <g stroke="${SKY}" stroke-opacity=".2" stroke-width="1.2">
+      <path d="M44 56 L38 112 M38 112 L74 152 M74 152 L96 84 M96 84 L44 56
+        M44 56 L74 152 M38 112 L96 84"/>
+    </g>
+    ${I.person(44, 56)}
+    ${I.person(38, 112, CORAL, .95)}
+    ${I.person(74, 152)}
+    ${I.person(96, 84)}
+    ${I.link("M108 96 C 132 92, 132 100, 142 100", SKY, .4)}
+    ${I.doc(163, 100)}
+    ${I.tick(163, 108)}
+    ${I.link("M186 100 C 198 100, 200 68, 214 62", SKY, .45)}
+    ${I.link("M214 62 H246 M246 62 V84", SKY, .45)}
+    ${I.link("M214 130 H278 M214 130 V118 M246 130 V116 M278 130 V118", SKY, .35)}
+    <path d="M246 102 V130" fill="none" stroke="${SKY}" stroke-opacity=".35" stroke-width="1.4"/>
+    ${I.person(246, 62)}
+    ${I.person(214, 146)}
+    ${I.person(246, 146)}
+    ${I.person(278, 146)}
+  </svg>`,
+
+  /* Supply & Sourcing: several factories feeding one hub, one of them the
+     second source that keeps supply standing up */
+  network: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("nw", '<stop offset="0" stop-color="#081733"/><stop offset=".55" stop-color="#0B1D3A"/><stop offset="1" stop-color="#142950"/>')}
+    <ellipse cx="160" cy="100" rx="136" ry="98" fill="url(#nw-glow)" opacity=".5"/>
+    <circle cx="262" cy="150" r="32" fill="url(#nw-cglow)"/>
+    ${I.link("M64 58 C 108 70, 118 86, 136 98", SKY, .42)}
+    ${I.link("M64 150 C 108 138, 118 118, 136 106", SKY, .42)}
+    ${I.link("M262 58 C 220 70, 202 86, 186 98", SKY, .42)}
+    ${I.linkAccent("M262 150 C 220 138, 202 118, 186 106", "nw")}
+    ${I.factory(52, 58)}
+    ${I.factory(52, 150)}
+    ${I.factory(268, 58)}
+    ${I.factory(268, 150, CORAL, .95)}
+    ${I.box(108, 74, 6, SKY, .7)}
+    ${I.box(108, 132, 6, SKY, .7)}
+    ${I.box(212, 74, 6, SKY, .7)}
+    ${I.box(212, 132, 6, CORAL, .9)}
+    ${I.warehouse(161, 100)}
+  </svg>`,
+
+  /* 3PL & Fulfilment: one warehouse, one fleet, three different channels */
+  routes: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("rt", '<stop offset="0" stop-color="#16315A"/><stop offset=".45" stop-color="#0B1D3A"/><stop offset="1" stop-color="#071531"/>')}
+    <ellipse cx="130" cy="100" rx="132" ry="94" fill="url(#rt-glow)" opacity=".45"/>
+    <circle cx="252" cy="156" r="32" fill="url(#rt-cglow)"/>
+    ${I.link("M86 96 C 150 92, 168 48, 224 44", SKY, .45, "6 5")}
+    ${I.link("M86 104 H224", SKY, .45, "6 5")}
+    ${I.linkAccent("M86 108 C 150 116, 168 152, 224 158", "rt", "6 5")}
+    ${I.warehouse(56, 96)}
+    ${I.truck(152, 104)}
+    ${I.house(254, 42)}
+    ${I.shop(254, 100)}
+    ${I.phone(254, 158, CORAL, .95)}
+  </svg>`,
+
+  /* Inventory & Demand: racking, the gap where the stockout is, and someone
+     counting it by hand */
+  levels: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("lv", '<stop offset="0" stop-color="#071531"/><stop offset=".5" stop-color="#0B1D3A"/><stop offset="1" stop-color="#14294F"/>')}
+    <ellipse cx="180" cy="104" rx="140" ry="94" fill="url(#lv-glow)" opacity=".45"/>
+    <circle cx="224" cy="110" r="30" fill="url(#lv-cglow)"/>
+    <path d="M118 40 C 158 24, 196 50, 232 32 C 258 20, 274 34, 296 26"
+      fill="none" stroke="${SKY}" stroke-opacity=".22" stroke-width="1.4"
+      stroke-dasharray="5 4"/>
+    <g fill="none" stroke="${SKY}" stroke-opacity=".5" stroke-width="1.7"
+       stroke-linecap="round">
+      <path d="M124 52 V172 M296 52 V172"/>
+      <path d="M124 78 H296 M124 122 H296 M124 166 H296"/>
+    </g>
+    ${I.box(142, 66)} ${I.box(170, 66)} ${I.box(226, 66)} ${I.box(282, 66)}
+    ${I.box(142, 110)} ${I.box(170, 110)} ${I.box(198, 110)} ${I.box(254, 110)}
+    ${I.box(282, 110)}
+    ${I.box(226, 110, 9, CORAL, .95, "4 3")}
+    ${I.box(142, 154)} ${I.box(198, 154)} ${I.box(226, 154)} ${I.box(254, 154)}
+    ${I.box(282, 154)}
+    ${I.person(56, 112)}
+    ${I.doc(88, 112, SKY, .7)}
+  </svg>`,
+
+  /* Technology & AI: the systems, the data, the dashboard people actually use */
+  systems: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("sy", '<stop offset="0" stop-color="#16315A"/><stop offset=".5" stop-color="#0B1D3A"/><stop offset="1" stop-color="#071531"/>')}
+    <ellipse cx="160" cy="96" rx="136" ry="94" fill="url(#sy-glow)" opacity=".5"/>
+    <circle cx="272" cy="150" r="30" fill="url(#sy-cglow)"/>
+    ${I.link("M64 54 C 96 60, 100 78, 110 86", SKY, .42)}
+    ${I.link("M64 150 C 96 142, 100 112, 110 102", SKY, .42)}
+    ${I.link("M210 86 C 226 78, 236 62, 258 56", SKY, .42)}
+    ${I.linkAccent("M210 102 C 226 112, 240 134, 262 146", "sy")}
+    ${I.database(50, 56)}
+    <g fill="none" stroke="${SKY}" stroke-opacity=".8" stroke-width="1.6">
+      <rect x="30" y="134" width="42" height="32" rx="6"/>
+      <path d="M38 146 h16 M38 154 h26" stroke-opacity=".45"/>
+    </g>
+    ${I.screen(160, 92, 96, 62)}
+    <g stroke="${SKY}" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round">
+      <path d="M128 104 V92 M142 104 V80 M156 104 V86 M170 104 V72"/>
+    </g>
+    <path d="M128 78 L142 68 L156 74 L170 60 L186 66" fill="none" stroke="${CORAL}"
+      stroke-opacity=".9" stroke-width="1.6" stroke-linecap="round"
+      stroke-linejoin="round"/>
+    <path d="M184 104 V78" stroke="${SKY}" stroke-opacity=".35" stroke-width="1.5"
+      stroke-linecap="round"/>
+    ${I.person(272, 56)}
+    ${I.spark(272, 152)}
+  </svg>`,
+
+  /* Customer Service: the queue on one side, one person and one clear view
+     on the other */
+  threads: `<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img">
+    ${artFrame("th", '<stop offset="0" stop-color="#071531"/><stop offset=".55" stop-color="#0B1D3A"/><stop offset="1" stop-color="#16315A"/>')}
+    <ellipse cx="140" cy="100" rx="140" ry="96" fill="url(#th-glow)" opacity=".45"/>
+    <circle cx="38" cy="100" r="30" fill="url(#th-cglow)"/>
+    ${I.person(32, 44)}
+    ${I.person(32, 100, CORAL, .95)}
+    ${I.person(32, 156)}
+    ${I.bubble(86, 42)}
+    ${I.bubble(86, 100, 34, 24, CORAL, .95)}
+    ${I.bubble(86, 158)}
+    ${I.link("M108 42 C 140 44, 146 88, 170 96", SKY, .4)}
+    ${I.link("M108 100 C 140 100, 148 98, 170 100", SKY, .4)}
+    ${I.link("M108 158 C 140 156, 146 112, 170 104", SKY, .4)}
+    ${I.screen(244, 76, 112, 60)}
+    <g stroke="${SKY}" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round">
+      <path d="M204 62 h64 M204 76 h76 M204 90 h48"/>
+    </g>
+    ${I.agent(244, 160)}
+  </svg>`
+};
+
+/* ------------------------------------------------------- the advisory page */
+/* show: false hides any card or section. Leave the line out and it shows */
+const visible = x => x && x.show !== false;
+
+/* a photograph if the card has one, the brand drawing if it does not,
+   the plain placeholder if it has neither */
+function advPicture(block){
+  if(block.image){
+    return `<img src="${block.image}" alt="${esc(block.title)}" loading="lazy"
+      data-art="${block.art || ""}" onerror="advPictureFailed(this)">`;
   }
-  },
+  return ART[block.art] ||
+    `<div class="shot-ph"><b>${esc(block.title)}</b><span>Image</span></div>`;
+}
+/* if the photograph is missing or misnamed, fall back rather than break */
+function advPictureFailed(img){
+  img.parentNode.innerHTML = ART[img.getAttribute("data-art")] ||
+    `<div class="shot-ph"><b>${esc(img.alt)}</b><span>Image</span></div>`;
+}
+
+function advToggle(label){
+  return `<button class="more" aria-expanded="false">
+    <span class="pm" aria-hidden="true"></span>${esc(label)}</button>`;
+}
+
+function renderAdvisory(){
+  const A = SITE.advisory;
+  const cols = n => `grid-template-columns:repeat(${Math.max(1, n)},minmax(0,1fr))`;
+  document.title = "Advisory | " + SITE.brand.mark;
+  document.body.insertAdjacentHTML("beforeend", navHTML());
+
+  /* the navy opening band */
+  document.body.insertAdjacentHTML("beforeend", `
+  <section class="hero centred bg-navy"><div class="w">
+    ${A.eyebrow ? `<div class="eyebrow">${esc(A.eyebrow)}</div>` : ""}
+    <h1>${esc(A.heading)} ${A.headingAccent
+      ? `<span class="accent">${esc(A.headingAccent)}</span>` : ""}</h1>
+    <div class="rule"></div>
+    <p>${esc(A.body)}</p>
+  </div></section>`);
+
+  /* the service cards */
+  const areas = (A.areas || []).filter(visible);
+  if(A.areasShow !== false && areas.length){
+    document.body.insertAdjacentHTML("beforeend", `
+    <section class="block" id="services"><div class="w">
+      ${A.areasEyebrow ? `<div class="eyebrow">${esc(A.areasEyebrow)}</div>` : ""}
+      ${A.areasHeading ? `<h2>${esc(A.areasHeading)}</h2>` : ""}
+      ${A.areasIntro ? `<p class="lede">${esc(A.areasIntro)}</p>` : ""}
+      <div class="scards" style="${cols(Math.min(A.areaColumns || 2, areas.length))}">
+        ${areas.map(s => `
+          <div class="scard" data-open="0">
+            <div class="thumb">${advPicture(s)}</div>
+            <div class="in">
+              <h3>${esc(s.title)}</h3>
+              ${s.line ? `<p class="sline">${esc(s.line)}</p>` : ""}
+              ${advToggle(A.moreLabel || "What this covers")}
+              <div class="panel"><div><div class="scard-body">
+                ${s.challenge ? `${A.challengeLabel
+                  ? `<div class="sub">${esc(A.challengeLabel)}</div>` : ""}
+                  <p>${esc(s.challenge)}</p>` : ""}
+                ${s.solutions && s.solutions.length ? `${A.solutionsLabel
+                  ? `<div class="sub">${esc(A.solutionsLabel)}</div>` : ""}
+                  <ul class="slist">${s.solutions.map(x =>
+                    `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+              </div></div></div>
+            </div>
+          </div>`).join("")}
+      </div>
+    </div></section>`);
+  }
+
+  /* the case studies */
+  const cases = (A.cases || []).filter(visible);
+  if(A.casesShow !== false && cases.length){
+    document.body.insertAdjacentHTML("beforeend", `
+    <section class="block light" id="cases"><div class="w">
+      ${A.casesEyebrow ? `<div class="eyebrow">${esc(A.casesEyebrow)}</div>` : ""}
+      ${A.casesHeading ? `<h2>${esc(A.casesHeading)}</h2>` : ""}
+      <div class="cases" style="${cols(Math.min(A.caseColumns || 3, cases.length))}">
+        ${cases.map(c => {
+          const figs = (c.figs || []).filter(visible);
+          const head = figs[0], rest = figs.slice(1);
+          return `
+          <article class="ccard" data-open="0">
+            <div class="thumb">${advPicture(c)}</div>
+            <div class="cin">
+              ${head ? `<div class="hfig">
+                <b class="${head.figure === "TBC" ? "tbc" : ""}">${esc(head.figure)}</b>
+                <span>${esc(head.label)}</span></div>` : ""}
+              <h3>${esc(c.title)}</h3>
+              ${c.line ? `<p class="cline">${esc(c.line)}</p>` : ""}
+              ${advToggle(A.caseMoreLabel || "The full story")}
+              <div class="panel"><div><div class="ccard-body">
+                ${c.body ? `<p>${esc(c.body)}</p>` : ""}
+                ${rest.length ? `<div class="figs">${rest.map(f =>
+                  `<div><b class="${f.figure === "TBC" ? "tbc" : ""}">${esc(f.figure)}</b>
+                   <span>${esc(f.label)}</span></div>`).join("")}</div>` : ""}
+                ${c.work && c.work.length ? `${A.workLabel
+                  ? `<div class="sub">${esc(A.workLabel)}</div>` : ""}
+                  <ul class="slist">${c.work.map(x =>
+                    `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+              </div></div></div>
+            </div>
+          </article>`; }).join("")}
+      </div>
+    </div></section>`);
+  }
+
+  /* the closing band */
+  if(A.closeShow !== false && A.close){
+    document.body.insertAdjacentHTML("beforeend", `
+    <section class="endcta"><div class="w">
+      <h3>${esc(A.close.heading)}</h3>
+      ${A.close.body ? `<p>${esc(A.close.body)}</p>` : ""}
+      ${A.close.cta
+        ? `<a class="btn" href="contact.html">${esc(A.close.cta)} ${arrow}</a>` : ""}
+    </div></section>`);
+  }
+
+  document.body.insertAdjacentHTML("beforeend", footHTML());
+
+  /* open and close the cards */
+  document.querySelectorAll(".more").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest("[data-open]");
+      const open = card.getAttribute("data-open") === "1";
+      card.setAttribute("data-open", open ? "0" : "1");
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  });
+}
 
 
