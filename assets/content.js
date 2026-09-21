@@ -147,7 +147,7 @@ const SITE = {
     featuresEyebrow: "",
     featuresHeading: "Key Features",
     howEyebrow:      "Systems",
-    howHeading:      "The Underlying Infastructure",
+    howHeading:      "The Underlying Infrastructure",
     endHeading:      "Demo"
   },
 
