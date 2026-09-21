@@ -162,9 +162,9 @@ const SITE = {
 
   /* ---- the six service cards ---- */
   areasShow: true,
-  areasEyebrow: "Where we help",
-  areasHeading: "Six places where growth usually starts to bite.",
-  areasIntro: "Open any card to see the shape of the problem and the work that answers it.",
+  areasEyebrow: "Where we can help",
+  areasHeading: "Areas where growth exposes the cracks",
+  areasIntro: "",
   areaColumns: 2,
   moreLabel: "What this covers",
   challengeLabel: "The challenge",
