@@ -357,3 +357,90 @@ footer a:hover{color:#fff}
 
 /* a single screenshot in the solution block sits centred instead of half width */
 .gallery.one{grid-template-columns:minmax(0,860px);justify-content:center}
+
+/* =============================================================================
+   PASTE 3 of 3  ->  assets/styles.css
+   Paste at the very END of styles.css. Nothing already in the file changes.
+   ========================================================================== */
+
+/* ============ NEW: advisory page only ============ */
+.sub{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:14px}
+.slist{list-style:none;padding:0;margin:0}
+.slist li{position:relative;padding:11px 0 11px 28px;border-bottom:1px solid var(--line);
+  font-size:15.5px;color:var(--ink-2)}
+.slist li:first-child{padding-top:0}
+.slist li:first-child::before{top:8px}
+.slist li:last-child{border-bottom:0;padding-bottom:0}
+.slist li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:2px;
+  background:var(--coral)}
+
+/* --- service cards, built on the existing .card styling --- */
+.scards{display:grid;gap:26px;margin-top:40px;align-items:start}
+@media(max-width:1000px){.scards{grid-template-columns:1fr !important;max-width:640px}}
+.scard{background:var(--white);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);overflow:hidden;transition:.18s}
+.scard:hover,.scard[data-open="1"]{box-shadow:var(--shadow-lg)}
+.scard .thumb{background:var(--navy);border-bottom:1px solid var(--line);
+  aspect-ratio:16/10;overflow:hidden;position:relative}
+.scard .thumb img,.scard .thumb svg{width:100%;height:100%;object-fit:cover;display:block}
+.scard .in{padding:26px 26px 24px}
+.scard h3{font-size:24px;margin-bottom:10px;color:var(--navy)}
+.scard .sline{font-size:15.5px;color:var(--ink-2);margin:0 0 20px}
+.more{display:inline-flex;align-items:center;gap:10px;background:none;border:0;padding:0;
+  font:600 15px var(--sans);color:var(--coral);cursor:pointer;text-align:left}
+.more .pm{width:20px;height:20px;border-radius:50%;background:var(--coral-soft);
+  position:relative;flex-shrink:0}
+.more .pm::before,.more .pm::after{content:"";position:absolute;left:50%;top:50%;
+  background:var(--coral);border-radius:2px;transform:translate(-50%,-50%);transition:.22s}
+.more .pm::before{width:9px;height:1.8px}
+.more .pm::after{width:1.8px;height:9px}
+[data-open="1"] .more .pm::after{height:1.8px}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+[data-open="1"] .panel{grid-template-rows:1fr}
+.panel > div{overflow:hidden}
+.scard-body{padding-top:24px;margin-top:24px;border-top:1px solid var(--line)}
+.scard-body p{font-size:16px;line-height:1.65;color:var(--ink-2);margin:0 0 24px}
+
+/* --- case study cards: navy, three across, expandable --- */
+.cases{display:grid;gap:26px;margin-top:42px;align-items:start}
+@media(max-width:1060px){.cases{grid-template-columns:repeat(2,1fr) !important}}
+@media(max-width:720px){.cases{grid-template-columns:1fr !important;max-width:560px}}
+.ccard{background:var(--navy);border-radius:14px;overflow:hidden;color:#fff;
+  box-shadow:0 2px 8px rgba(11,29,58,.1),0 18px 44px rgba(11,29,58,.16);transition:.18s}
+.ccard:hover{transform:translateY(-3px)}
+.ccard[data-open="1"]{transform:none}
+.ccard .thumb{aspect-ratio:16/10;overflow:hidden;position:relative;
+  border-bottom:1px solid rgba(187,218,248,.2)}
+.ccard .thumb img,.ccard .thumb svg{width:100%;height:100%;object-fit:cover;display:block}
+.ccard .cin{padding:28px 28px 30px}
+.ccard .hfig{border-bottom:1px solid rgba(187,218,248,.22);padding-bottom:20px;margin-bottom:20px}
+.ccard .hfig b{display:block;font-family:var(--disp);font-size:44px;font-weight:800;
+  letter-spacing:-.045em;line-height:1;color:var(--coral)}
+.ccard .hfig b.tbc{color:rgba(187,218,248,.45);font-size:30px}
+.ccard .hfig span{display:block;font-size:14px;color:rgba(187,218,248,.86);margin-top:10px}
+.ccard h3{font-size:22px;color:#fff;margin-bottom:12px}
+.ccard .cline{font-size:15px;color:rgba(187,218,248,.82);margin:0 0 22px;line-height:1.5}
+.ccard .more{color:#fff}
+.ccard .more .pm{background:rgba(255,255,255,.14)}
+.ccard .more .pm::before,.ccard .more .pm::after{background:var(--coral)}
+.ccard-body{padding-top:24px;margin-top:24px;border-top:1px solid rgba(187,218,248,.22)}
+.ccard-body p{font-size:15.5px;line-height:1.7;color:rgba(230,240,250,.84);margin:0 0 24px}
+.ccard .figs{display:grid;gap:0;margin:0 0 24px;border-top:1px solid rgba(187,218,248,.18);
+  border-bottom:1px solid rgba(187,218,248,.18)}
+.ccard .figs div{padding:16px 0}
+.ccard .figs div + div{border-top:1px solid rgba(187,218,248,.18)}
+.ccard .figs b{display:block;font-family:var(--disp);font-size:25px;font-weight:700;
+  letter-spacing:-.035em;color:#fff;line-height:1}
+.ccard .figs b.tbc{color:rgba(187,218,248,.45);font-size:19px}
+.ccard .figs span{display:block;font-size:13.5px;color:rgba(187,218,248,.8);margin-top:7px}
+.ccard .sub{color:var(--sky)}
+.ccard .slist li{color:rgba(230,240,250,.84);border-bottom-color:rgba(187,218,248,.18);
+  font-size:15px}
+
+/* the existing placeholder, sized for an advisory card */
+.scard .shot-ph,.ccard .shot-ph{aspect-ratio:auto;height:100%;padding:24px;gap:8px}
+.scard .shot-ph b,.ccard .shot-ph b{font-size:19px}
+.shot-ph span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(187,218,248,.7)}
+
