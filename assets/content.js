@@ -349,7 +349,7 @@ const SITE = {
   close: {
     heading: "Scaling does not have to mean adding complexity.",
     body: "The right processes, systems, suppliers and infrastructure create capacity for growth rather than overhead.",
-    cta: "Let's talk"
+    cta: "Get in touch"
   }
   },
 
