@@ -155,10 +155,10 @@ const SITE = {
 
   advisory: {
 
-  eyebrow: "Advisory",
+  eyebrow: "",
   heading: "Building the operational foundations",
   headingAccent: "for growth.",
-  body: "Helping scaling consumer businesses make their operations simpler, sharper and ready for the stage that comes next.",
+  body: "Helping scaling businesses make their operations more efficient and ready for the stage for whatever comes next.",
 
   /* ---- the six service cards ---- */
   areasShow: true,
