@@ -270,7 +270,7 @@ const SITE = {
   ],
 
   /* ---- the case studies ---- */
-  casesShow: true,
+  casesShow: false,
   casesEyebrow: "Case studies",
   casesHeading: "What this has looked like in practice.",
   caseColumns: 3,
