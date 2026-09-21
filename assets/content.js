@@ -158,7 +158,7 @@ const SITE = {
   eyebrow: "",
   heading: "Building the operational foundations",
   headingAccent: "for growth.",
-  body: "Helping scaling businesses make their operations more efficient and ready for the stage for whatever comes next.",
+  body: "Helping scaling businesses make their operations more efficient and ready for whatever comes next.",
 
   /* ---- the six service cards ---- */
   areasShow: true,
